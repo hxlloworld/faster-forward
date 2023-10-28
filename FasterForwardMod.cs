@@ -71,20 +71,14 @@ public class FasterForwardMod : BloonsTD6Mod
         if (InGame.instance == null) return;
 
         UpdateInGame();
-
-        if (speed != lastSpeed)
-        {
-            Game.instance.ShowMessage("Fast Forward Speed is now " + speed + "x" + (speed == 3 ? " (Default)" : ""),
-                1f);
-        }
+        
     }
 
     public static void UpdateInGame()
     {
         if (SpeedCustom.JustPressed())
         {
-            PopupScreen.instance.ShowSetValuePopup("Custom Fast Forward Speed",
-                "Sets the Fast Forward speed to the specified value",
+            
                 new Action<int>(i =>
                 {
                     if (i < 1)
